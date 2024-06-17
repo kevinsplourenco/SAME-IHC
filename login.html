@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SAME</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="imagens/logo_same.png" alt="Logotipo SAME" class="logo small-logo2" id="logo">
+    </header>
+    <button class="accessibility-btn" onclick="toggleAccessibilityMenu()">Acessibilidade</button>
+    <button class="support-btn" onclick="location.href='ajuda-e-suporte.html'">Ajuda e Suporte</button> <!-- Alterado -->
+    <main>
+        <div class="container_2">
+            <!-- Formulário de Login -->
+            <form onsubmit="return login()">
+                <h2>Fazer Login</h2><br>
+                <input type="email" id="email" placeholder="E-mail" required>
+                <input type="password" id="senha" placeholder="Senha" required>
+                <button type="submit">Entrar</button>
+                <p id="error-msg" style="color: red;"></p>
+            </form>
+            <button onclick="location.href='index.html'">Voltar</button>
+        </div>
+    </main>
+    <div id="accessibility-menu" class="accessibility-menu">
+        <h3>Opções de Acessibilidade</h3>
+        <div class="theme-switch-container">
+            <label class="theme-switch">
+                <input type="checkbox" id="theme-toggle" onchange="toggleTheme()">
+                <span class="slider round"></span>
+            </label>
+            <span id="theme-label">Tema Claro</span>
+        </div>
+        <button onclick="increaseFontSize()">Aumentar Fonte</button>
+        <button onclick="decreaseFontSize()">Diminuir Fonte</button>
+        <button onclick="resetAccessibility()">Redefinir Acessibilidade</button>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Break.NO Ltda. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

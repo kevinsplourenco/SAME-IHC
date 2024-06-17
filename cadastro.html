@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - SAME</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="imagens/logo_same.png" alt="Logotipo SAME" class="logo small-logo" id="logo">
+    </header>
+    <button class="accessibility-btn" onclick="toggleAccessibilityMenu()">Acessibilidade</button>
+    <button class="support-btn" onclick="location.href='ajuda-e-suporte.html'">Ajuda e Suporte</button> <!-- Alterado -->
+    <main>
+        <div class="container">
+            <h2>Realize o seu Cadastro</h2>
+            <form id="cadastroForm">
+                <div class="form-group">
+                    <label for="nome-microempreendedor">Nome do Microempreendedor:</label>
+                    <input type="text" id="nome-microempreendedor" name="nome-microempreendedor" required>
+                </div>
+                <div class="form-group">
+                    <label for="nome-empresa">Nome da Empresa:</label>
+                    <input type="text" id="nome-empresa" name="nome-empresa" required>
+                </div>
+                <div class="form-group">
+                    <label for="cnpj">CNPJ:</label>
+                    <input type="text" id="cnpj" name="cnpj" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" required>
+                </div>
+                <div class="form-group">
+                    <label for="endereco">Endereço:</label>
+                    <input type="text" id="endereco" name="endereco" required>
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmar-senha">Repita a Senha:</label>
+                    <input type="password" id="confirmar-senha" name="confirmar-senha" required>
+                </div>
+                <div class="button-group">
+                    <button type="submit">Cadastrar</button>
+                    <button type="button" onclick="location.href='index.html'">Voltar</button>
+                </div>
+            </form>
+        </div>
+        <div id="accessibility-menu" class="accessibility-menu">
+            <h3>Opções de Acessibilidade</h3>
+            <div class="theme-switch-container">
+                <label class="theme-switch">
+                    <input type="checkbox" id="theme-toggle" onchange="toggleTheme()">
+                    <span class="slider round"></span>
+                </label>
+                <span id="theme-label">Tema Claro</span>
+            </div>
+            <button onclick="increaseFontSize()">Aumentar Fonte</button>
+            <button onclick="decreaseFontSize()">Diminuir Fonte</button>
+            <button onclick="resetAccessibility()">Redefinir Acessibilidade</button>
+        </div>
+    </main>
+    
+    <script src="scripts.js"></script>
+    <script>
+        document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+            // Evitar o envio do formulário
+            event.preventDefault();
+            // Validar se as senhas coincidem
+            var senha = document.getElementById('senha').value;
+            var confirmarSenha = document.getElementById('confirmar-senha').value;
+            if (senha !== confirmarSenha) {
+                window.alert('As senhas não coincidem. Por favor, tente novamente.');
+                return; // Impedir o envio do formulário
+            }
+            // Mostrar a mensagem de sucesso
+            window.alert('Cadastro realizado com sucesso!');
+            // Limpar os campos do formulário
+            document.getElementById('cadastroForm').reset();
+        });
+    </script>
+</body>
+</html>

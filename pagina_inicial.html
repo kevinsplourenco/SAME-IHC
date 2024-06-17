@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Logada - SAME</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="imagens/logo_same.png" alt="Logotipo SAME" class="logo small-logo" id="logo">
+    </header>
+    <button class="accessibility-btn" onclick="toggleAccessibilityMenu()">Acessibilidade</button>
+    <button class="support-btn" onclick="location.href='ajuda-e-suporte.html'">Ajuda e Suporte</button> <!-- Alterado -->
+    <main>
+        <div class="container" id="homepage-options">
+            <h2></h2>
+            <div class="options">
+                <div class="option-group">
+                    <a href="personalizar.html" class="option">
+                        <img src="imagens/personalizar.png" alt="Personalizar">
+                        <p><strong>Personalizar</strong></p>
+                    </a>
+                    
+                    <a href="gerenciar-estoque.html" class="option">
+                        <img src="imagens/estoque.png" alt="Gerenciar Estoque">
+                        <p><strong>Gerenciar</strong> <strong>Estoque</strong></p>
+                    </a>
+                </div>
+                <div class="option-group">
+                    <a href="registrar_venda.html" class="option">
+                        <img src="imagens/venda.png" alt="Gerenciar Vendas">
+                        <p><strong>Gerenciar</strong> <strong>Vendas</strong></p>
+                    </a>
+                    <a href="gerenciar-usuarios.html" class="option">
+                        <img src="imagens/usuario.png" alt="Gerenciar Usuários">
+                        <p><strong>Gerenciar</strong> <strong>Usuários</strong></p>
+                    </a>
+                </div>
+                <div class="option-group">
+                    <a href="fluxo-de-caixa.html" class="option">
+                        <img src="imagens/fluxo.png" alt="Fluxo de Caixa">
+                        <p><strong>Fluxo</strong> <strong>de</strong> <strong>Caixa</strong></p>
+                    </a>
+                    <a href="relatorios.html" class="option">
+                        <img src="imagens/relatorio.png" alt="Relatórios">
+                        <p class="relatorios"><strong>Relatórios</strong></p>
+                    </a>
+                </div>
+            </div>
+            <button onclick="location.href='index.html'">Sair</button>
+        </div>
+    </main>
+    <div id="accessibility-menu" class="accessibility-menu">
+        <h3>Opções de Acessibilidade</h3>
+        <div class="theme-switch-container">
+            <label class="theme-switch">
+                <input type="checkbox" id="theme-toggle" onchange="toggleTheme()">
+                <span class="slider round"></span>
+            </label>
+            <span id="theme-label">Tema Claro</span>
+        </div>
+        <button onclick="increaseFontSize()">Aumentar Fonte</button>
+        <button onclick="decreaseFontSize()">Diminuir Fonte</button>
+        <button onclick="resetAccessibility()">Redefinir Acessibilidade</button>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Break.NO Ltda. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
+<style>
+    .option {
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+    }
+    .option:hover img {
+        box-shadow: 0 0 10px rgba(6, 212, 109, 0.5); /* Sombra ao passar o mouse */
+        
+    }
+</style>
